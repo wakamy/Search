@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <form id="form1" action="#">
+    <input type="text" id="input-message">
+    <input type="button" onclick="showMessage()" value="送信">
+  </form>
+  <p id="output-message"></p>
+  <script language="javascript" type="text/javascript">
+    const showMessage = () => {
+      const textbox = document.getElementById("input-message");
+      const inputValue = textbox.value;
+      
+      //検索
+      var target = [textbox];
+      var result = {};
+      for(var key of Object.keys(list)){
+        for(var i of target){
+            if(key == i){
+                result[key] = list[key]; 
+                break;
+             }
+        }
+      }
+
+      //出力
+      const output = result;
+      //const output = textbox.value+"のIDは「" + result.value+ "」です。";
+      document.getElementById("output-message").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
